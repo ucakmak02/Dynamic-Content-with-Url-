@@ -1,0 +1,45 @@
+...
+/* image add area for all dynamic pages */
+<div class="image">
+  <input id="imagebutton" type="file" multiple="false" accept="image/*" onchange="loadFile(event)">
+  <img id="image" alt="No Image"> 
+</div>
+
+...
+
+<script>
+
+  /* loadFile function used for uploading image */
+  function loadFile(event) {
+    let image = document.getElementById('image');
+    image.src = URL.createObjectURL(event.target.files[0]);
+    document.getElementById("imagebutton").style.display="none";
+
+  } 
+</script>
+
+
+
+<script>
+/* Add images for Specific pages */
+  $(document).ready(function () {
+    if (window.location.href=="https://yourweb.site.com/apple/image") {
+      document.getElementById("imagebutton").style.display="none";
+      let image = document.getElementById('image');
+      image.src = "../static/apple.jpg"
+    }
+
+    if (window.location.href=="https://https://yourweb.site.com/orange/image") {
+      document.getElementById("imagebutton").style.display="none";
+      let image = document.getElementById('image');
+      image.src = "../static/orange.jpg"
+    }
+
+</script>
+
+
+
+
+
+      
+ 
